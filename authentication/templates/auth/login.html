@@ -1,0 +1,13 @@
+{% extends 'auth/base.html' %}
+
+{% block title %} Acceso {% endblock %}
+
+{% block content %}
+  <h1>Inicia sesión</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit" value="Acceder">
+  </form>
+  <small>Aún no tienes una cuenta? <a href="{% url 'register' %}">Regístrate ahora</a>.</small>
+{% endblock %}
