@@ -10,3 +10,15 @@
   background-color: var(--brown-300);
   border-radius: 10px;
 }
+
+#auth-wrapper h1 {
+  margin-bottom: -0.5rem;
+}
+
+#auth-wrapper .logo {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid var(--white-400);
+}

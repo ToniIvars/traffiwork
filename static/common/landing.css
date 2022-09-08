@@ -1,0 +1,27 @@
+#landing-container {
+  font-size: 150%;
+  width: 100%;
+  max-width: 600px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.submit {
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  color: var(--white-400);
+  background-color: var(--brown-300);
+  border: none;
+  border-radius: 8px;
+  transition: scale 200ms ease-in-out;
+}
+
+.submit:hover {
+  color: var(--white-400);
+  scale: 1.05;
+}

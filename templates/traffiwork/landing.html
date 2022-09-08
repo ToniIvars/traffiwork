@@ -6,17 +6,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traffiwork - {% block title %}{% endblock %}</title>
+  <title>Traffiwork</title>
   <link rel="icon" href="{% static 'common/images/favicon.svg' %}" type="image/svg+xml">
 
   <link rel="stylesheet" href="{% static 'common/common.css' %}">
-  <link rel="stylesheet" href="{% static 'auth/base.css' %}">
-  <script src="{% static 'auth/base.js' %}" defer></script>
+  <link rel="stylesheet" href="{% static 'common/landing.css' %}">
 </head>
 <body>
-  <div id="auth-wrapper">
-    <h1 class="logo">Traffiwork</h1>
-    {% block content %}{% endblock %}
+  <div id="landing-container">
+    <h1>Bienvenidos a <span class="logo">Traffiwork</span></h1>
+    <p>Una manera justa de intercambiar los deberes con tus compañeros.</p>
+    <a href="{% url 'register' %}" class="submit">¡Únete ahora y empieza el intercambio!</a>
   </div>
 </body>
 </html>
