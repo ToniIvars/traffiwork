@@ -2,8 +2,9 @@
 
 {% block title %} Registro {% endblock %}
 
+{% block form_title %} <h1>Regístrate</h1> {% endblock %}
+
 {% block content %}
-  <h1>Regístrate</h1>
   <form method="post" class="form-mark-required">
     {% csrf_token %}
     {{ form.as_div }}

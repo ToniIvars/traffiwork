@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
@@ -22,8 +23,7 @@ def log_in(request):
                 return redirect(reverse('dashboard'))
 
             else:
-                # Display some error
-                pass
+                messages.error(request, 'Las credenciales son inválidas')
 
     else:
         form = LoginForm()
@@ -38,6 +38,7 @@ def register(request):
         form = RegisterForm(request.POST)
 
         if form.is_valid():
+            print(form.cleaned_data)
             user = User.objects.create_user(**form.cleaned_data)
             login(request, user)
             return redirect(reverse('dashboard'))

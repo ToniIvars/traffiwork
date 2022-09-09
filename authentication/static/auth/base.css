@@ -11,11 +11,8 @@
   border-radius: 10px;
 }
 
-#auth-wrapper h1 {
-  margin-bottom: -0.5rem;
-}
-
 #auth-wrapper .logo {
+  font-size: 2rem;
   width: 100%;
   text-align: center;
   padding-bottom: 0.5rem;

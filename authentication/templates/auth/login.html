@@ -2,8 +2,9 @@
 
 {% block title %} Acceso {% endblock %}
 
+{% block form_title %} <h1>Inicia sesión</h1> {% endblock %}
+
 {% block content %}
-  <h1>Inicia sesión</h1>
   <form method="post">
     {% csrf_token %}
     {{ form.as_div }}

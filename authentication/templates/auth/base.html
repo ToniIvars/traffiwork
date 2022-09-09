@@ -15,7 +15,17 @@
 </head>
 <body>
   <div id="auth-wrapper">
-    <h1 class="logo">Traffiwork</h1>
+    <p class="logo">Traffiwork</p>
+    {% block form_title %}{% endblock %}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
     {% block content %}{% endblock %}
   </div>
 </body>
