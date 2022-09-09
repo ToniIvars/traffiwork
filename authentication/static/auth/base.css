@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   margin-top: 10vh;
   height: fit-content;
   background-color: var(--brown-300);
@@ -12,7 +12,6 @@
 }
 
 #auth-wrapper .logo {
-  font-size: 2rem;
   width: 100%;
   text-align: center;
   padding-bottom: 0.5rem;
