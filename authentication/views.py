@@ -38,8 +38,7 @@ def register(request):
         form = RegisterForm(request.POST)
 
         if form.is_valid():
-            print(form.cleaned_data)
-            user = User.objects.create_user(**form.cleaned_data)
+            user = form.save()
             login(request, user)
             return redirect(reverse('dashboard'))
 
