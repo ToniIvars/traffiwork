@@ -12,13 +12,3 @@ class Classroom(models.Model):
 
     def __str__(self) -> str:
         return f'Classroom: {self.name}'
-
-class Homework(models.Model):
-    description = models.TextField()
-    classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
-    date = models.DateField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    answer_url = models.URLField(max_length=40, blank=True)
-
-    def __str__(self) -> str:
-        return f'Homework: {self.user} -> {self.classroom}'
