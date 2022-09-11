@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffiwork - {% block title %}{% endblock %}</title>
+  <link rel="icon" href="{% static 'common/images/favicon.svg' %}" type="image/svg+xml">
+
+  <link rel="stylesheet" href="{% static 'common/common.css' %}">
+  <link rel="stylesheet" href="{% static 'common/base.css' %}">
+  {% block styles %}{% endblock %}
+
+  <!-- Fontawesome icons -->
+  <script src="https://kit.fontawesome.com/4e33fdf0b5.js" crossorigin="anonymous"></script>
+  {% block scripts %}{% endblock %}
+</head>
+<body>
+  <div id="main-container">
+    <nav>
+      <p class="logo">Traffiwork</p>
+      <div class="nav-links">
+        <a href="{% url 'dashboard' %}" class="nav-link">
+          <i class="fa-solid fa-user icon"></i>
+          <span>Mi perfil</span>
+        </a>
+        <a href="{% url 'logout' %}" class="nav-link">
+          <i class="fa-solid fa-arrow-right-from-bracket icon"></i>
+          <span>Cerrar sesión</span>
+        </a>
+      </div>
+    </nav>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div id="main-section">
+      {% block content %}{% endblock %}
+    </div>
+    <footer>
+      <p>Desarrollado por ToniIvars</p>
+      <div>
+        <a href="https://instagram.com/toni_04_bdm" target="_blank" rel="noreferrer">
+          <i class="fa-brands fa-instagram icon"></i>
+        </a>
+        <a href="https://github.com/ToniIvars" target="_blank" rel="noreferrer">
+          <i class="fa-brands fa-github icon"></i>
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

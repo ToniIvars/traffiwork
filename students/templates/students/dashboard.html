@@ -1,0 +1,54 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %} {{user.username}} {% endblock %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'students/dashboard.css' %}"> {% endblock %}
+
+{% block scripts %} <script src="{% static 'students/dashboard.js' %}" defer></script> {% endblock %}
+
+{% block content %}
+  <div id="dashboard-title">
+    <h1>Bienvenido, {{user.username}}</h1>
+    <a href="#" id="create-classroom">
+      <i class="fa-solid fa-plus"></i>
+      Crear clase
+    </a>
+  </div>
+  
+  <div class="section">
+    <h2>Clases creadas por ti
+      <i class="fa-solid fa-angle-down"></i>
+      <i class="fa-solid fa-angle-right hidden"></i>
+    </h2>
+    <div class="section-classrooms-container">
+      {% for classroom in created_classrooms %}
+        <div class="section-classroom">
+          <i class="fa-solid fa-square-arrow-up-right share-icon"></i>
+          <h3>{{ classroom.name }}</h3>
+          <p>{{ classroom.description|truncatewords:16 }}</p>
+        </div>
+      {% empty %}
+        <p><em>No has creado ninguna clase todavía</em></p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Clases en las que participas
+      <i class="fa-solid fa-angle-down"></i>
+      <i class="fa-solid fa-angle-right hidden"></i>
+    </h2>
+    <div class="section-classrooms-container">
+      {% for classroom in participating_classrooms %}
+        <div class="section-classroom">
+          <h3>{{ classroom.name }}</h3>
+          <p>{{ classroom.description|truncatewords:16 }}</p>
+          <a href="{% url 'profile' classroom.creator %}" class="creator">{{ classroom.creator }}</a>
+        </div>
+      {% empty %}
+        <p><em>No participas en ninguna clase todavía</em></p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

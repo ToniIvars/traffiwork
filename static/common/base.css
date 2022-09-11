@@ -1,0 +1,78 @@
+#main-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav, footer {
+  width: 100%;
+  background-color: var(--brown-300);
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  padding-left: 3%;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-link {
+  color: var(--white-400);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.5rem;
+  transition: border-bottom-color 300ms ease-in-out, color 300ms ease-out;
+}
+
+.nav-link:hover {
+  border-bottom-color: var(--brown-200);
+}
+
+.icon {
+  font-size: 1.25rem;
+  color: var(--white-400);
+  transition: color 300ms ease-out;
+}
+
+.nav-link:hover .icon { color: var(--brown-200); }
+
+@media screen and (max-width: 500px) {
+  .nav-link span { display: none; }
+}
+
+#main-section {
+  padding: 1.5rem 3%;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
+
+footer {
+  padding: 0.75rem 3%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+footer div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.text-centre { text-align: center; }
+
+.messages {
+  width: 94%;
+  max-width: 1200px;
+  margin-top: 0.75rem;
+}

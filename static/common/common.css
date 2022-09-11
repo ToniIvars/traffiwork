@@ -9,12 +9,13 @@
 body {
   width: 100%;
   min-height: 100vh;
-  padding: 0 3%;
   display: flex;
   justify-content: center;
   background-image: url('images/background.jpg');
   backdrop-filter: blur(4px) brightness(0.5);
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   --brown-100: #33221a;
   --brown-200: #5C3D2E;
@@ -32,6 +33,7 @@ body {
 a {
   text-decoration: none;
   color: var(--brown-100);
+  transition: color 200ms ease-in-out;
 }
 
 a:hover { color: var(--brown-200); }
@@ -93,6 +95,7 @@ input[type="submit"]:hover { scale: 1.05; }
 small { font-size: 90%; }
 
 .logo { font-family: 'Permanent Marker', cursive; }
+p.logo { font-size: 2rem; }
 
 .messages {
   list-style: none;

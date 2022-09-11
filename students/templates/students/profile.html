@@ -1,0 +1,18 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %} {{user.username}} {% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'students/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1 class="text-centre">Perfil de {{user.username}}</h1>
+  
+  <p class="badge">Nombre: {% if user.first_name %} {{user.first_name}} {% else %} <em>Desconocido</em> {% endif %}</p>
+  <p class="badge">Apellidos: {% if user.last_name %} {{user.last_name}} {% else %} <em>Desconocidos</em> {% endif %}</p>
+  <p class="badge">Dirección de correo electrónico:
+    {% if user.email %} <a href="mailto: {{user.email}}">{{user.email}}</a> {% else %} <em>Desconocida</em> {% endif %}
+  </p>
+{% endblock %}
