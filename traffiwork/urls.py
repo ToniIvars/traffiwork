@@ -7,5 +7,6 @@ urlpatterns = [
     path('', landing, name='landing'),
     path('admin/', admin.site.urls),
     path('auth/', include('authentication.urls')),
+    path('classrooms/', include('classrooms.urls')),
     path('students/', include('students.urls')),
 ]

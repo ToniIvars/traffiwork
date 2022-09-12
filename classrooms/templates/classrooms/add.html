@@ -1,0 +1,16 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block title %} Crear clase {% endblock %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'classrooms/add.css' %}"> {% endblock %}
+
+{% block content %}
+  <h1>Crear una clase nueva</h1>
+
+  <form method="post" class="form-mark-required">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit" value="Crear clase">
+  </form>
+{% endblock %}

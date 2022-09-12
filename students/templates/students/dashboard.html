@@ -10,7 +10,7 @@
 {% block content %}
   <div id="dashboard-title">
     <h1>Bienvenido, {{user.username}}</h1>
-    <a href="#" id="create-classroom">
+    <a href="{% url 'add_classroom' %}" id="create-classroom">
       <i class="fa-solid fa-plus"></i>
       Crear clase
     </a>
@@ -24,7 +24,10 @@
     <div class="section-classrooms-container">
       {% for classroom in created_classrooms %}
         <div class="section-classroom">
-          <i class="fa-solid fa-square-arrow-up-right share-icon"></i>
+          <button data-link="{% url 'join_classroom' classroom.id %}" class="share-icon">
+            <p class="tooltip hidden">Link copiado!</p>
+            <i class="fa-solid fa-square-arrow-up-right"></i>
+          </button>
           <h3>{{ classroom.name }}</h3>
           <p>{{ classroom.description|truncatewords:16 }}</p>
         </div>

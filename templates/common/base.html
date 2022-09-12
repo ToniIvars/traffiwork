@@ -13,9 +13,11 @@
   <link rel="stylesheet" href="{% static 'common/base.css' %}">
   {% block styles %}{% endblock %}
 
+  <script src="{% static 'common/mark-required-inputs.js' %}" defer></script>
+  {% block scripts %}{% endblock %}
+  
   <!-- Fontawesome icons -->
   <script src="https://kit.fontawesome.com/4e33fdf0b5.js" crossorigin="anonymous"></script>
-  {% block scripts %}{% endblock %}
 </head>
 <body>
   <div id="main-container">
